@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new todolist</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="../../style/todolist.css" th:href="@{/style/todolist.css}"/>
+
+</head>
+<body>
+
+  <h1>Enter one thing you need to do to day</h1>
+    <form action="#" th:action="@{/index}" th:object="${todolist}" method="post" name="todo-form" onsubmit="return validateForm()" >
+
+        <p>Thing to do: <input id="content" type="text" th:field="*{content}"></p>
+        <div class="error" id="error-content"></div>
+        <p> <input id="submit" type="submit" value="Submit"/></p>
+    </form>
+</body>
+</html>
